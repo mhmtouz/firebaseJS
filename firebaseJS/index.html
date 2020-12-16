@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+    
+    <title>Firebase Deneme</title>
+</head>
+<body>
+    <h1>Çalışanlar</h1>
+    <div class="content">
+        <form id="calisan-form">
+            <input type="text" name="isim" placeholder="İsim:"/>            
+            <input type="text" name="numara" placeholder="Telefon Numarası:"/>            
+            <input type="text" name="mail" placeholder="Mail Adresi:"/>            
+            <input type="text" name="dep" placeholder="Departman:"/>
+            <button>Ekle</button>
+        </form>
+        <ul id="calisanlar"></ul>
+        
+        <script>
+            //firebase ayarları
+            var firebaseConfig = {
+                apiKey: "AIzaSyA9glcwMuXljpG4YwKsgc9XS38ANMt29vw",
+                authDomain: "denemefirebase1-7086d.firebaseapp.com",
+                projectId: "denemefirebase1-7086d",
+                storageBucket: "denemefirebase1-7086d.appspot.com",
+                messagingSenderId: "776538018720",
+                appId: "1:776538018720:web:914716e2b28967b98e0ac5",
+                measurementId: "G-KQM38YME53"
+            };
+            //firebase başlatma
+            firebase.initializeApp(firebaseConfig);
+            //firestone dosyaları
+            const db=firebase.firestore();
+            db.settings({timestampsInSnapshots:true})
+        </script>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
